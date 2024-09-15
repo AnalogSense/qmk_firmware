@@ -73,6 +73,10 @@ bool kc_raw_hid_rx(uint8_t *data, uint8_t length) {
             itoa((DEVICE_VER >> 4) & 0xF, (char *)&data[i++], 16);
             data[i++] = '.';
             itoa(DEVICE_VER & 0xF, (char *)&data[i++], 16);
+            data[i++] = '+';
+            data[i++] = 'f';
+            data[i++] = 'a';
+            data[i++] = 'r';
             data[i++] = ' ';
             memcpy(&data[i], QMK_BUILDDATE, sizeof(QMK_BUILDDATE));
             i += sizeof(QMK_BUILDDATE);
